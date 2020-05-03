@@ -33,14 +33,13 @@ public class AuthController extends AbstractGenericController {
 	public String getLoginURL(@PathVariable(required = true) String provider, @RequestBody(required = false) UserDto user, HttpServletRequest request) {
 		String targetUri = null;
 		try {
-			StringBuffer url = new StringBuffer();//"http://localhost:8080/app/login/callback"
+			StringBuffer url = new StringBuffer();
 			url.append(request.getScheme()).append("://").append(request.getServerName());
 			int serverPort = request.getServerPort();
 			if (serverPort != 80 && serverPort != 443) {
 				url.append(":").append(serverPort);
 			}
 			url.append(request.getContextPath()).append("/auth/login/callback");
-			//targetUrl.append(getPropValue(API_GATEWAY_HOST)).append("/authservice/oauth2/authorization/").append(provider);
 			targetUri= UriComponentsBuilder.fromUriString(getPropValue(API_GATEWAY_HOST))
 					.path("/authservice/oauth2/authorization/").path(provider)
 					.queryParam("callback", url).build().toUri().toString();
