@@ -43,6 +43,7 @@ public class AuthController extends AbstractGenericController {
 			targetUri= UriComponentsBuilder.fromUriString(getPropValue(API_GATEWAY_HOST))
 					.path("/authservice/oauth2/authorization/").path(provider)
 					.queryParam("callback", url).build().toUri().toString();
+			logger.debug("URL for authentication: "+targetUri);
 		} catch (IOException e) { logger.error(e.getMessage()); }
 		return targetUri;
 	}
