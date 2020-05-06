@@ -91,9 +91,13 @@
 			}else{
 				var uri = row.path.replace(rootPath,'');
 				uri = '<c:url value="/course/${requestScope.course}"/>/'+uri.substr(1, uri.length).split('/').join('-');
-				dom.append('<li class="nav-item"><a class="nav-link" href="'+uri+'">'+row.name+'</a></li>');
+				dom.append('<li class="nav-item"><a class="nav-link submenu-link" href="'+uri+'">'+row.name+'</a></li>');
 			}
 		}
 	}
+	$('.submenu-link').click((e)=>{
+		e.preventDefault();
+		alert(this.attr('href').val());
+	});
 </script>
 

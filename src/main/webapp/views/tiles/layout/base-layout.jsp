@@ -55,9 +55,9 @@
 <script	type="text/javascript" src="<c:url value='/views/js/jquery-3.4.1.min.js'/>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script type="text/javascript" src="<c:url value='/views/bootstrap/4.4.1/js/bootstrap.min.js'/>"></script>
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 <script type="text/javascript" src="<c:url value='/views/js/app.js'/>"></script>
 <%-- <script src="${contextpath}/views/js/main.js" type="text/javascript"></script> --%>
 <script type="text/javascript" src="<c:url value='/views/js/login.js'/>"></script>
-<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
 </body>    
 </html>    

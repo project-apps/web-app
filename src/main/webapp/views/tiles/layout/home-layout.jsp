@@ -54,5 +54,11 @@
 <script type="text/javascript" src="<c:url value='/views/js/app.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/views/js/login.js'/>"></script>
 <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
+<!-- Load React API -->
+<script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+<!-- Load React DOM-->
+<script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<!-- Load Babel Compiler -->
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 </body>    
 </html>    

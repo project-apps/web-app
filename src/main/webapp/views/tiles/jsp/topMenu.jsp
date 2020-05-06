@@ -12,6 +12,7 @@
         <a href="<c:url value='/home'/>" class="nav-item nav-link active">Home</a>
         <a href="<c:url value='/course/java'/>" class="nav-item nav-link">Java</a>
         <a href="<c:url value='/course/nodejs'/>" class="nav-item nav-link">NodeJS</a>
+        <a href="<c:url value='/course/reactjs'/>" class="nav-item nav-link">ReactJS</a>
         <a href="#" class="nav-item nav-link">About</a>
         <a href="#" class="nav-item nav-link">Contact</a>
     </div>
