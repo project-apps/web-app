@@ -3,11 +3,11 @@
  <style>
   /* Make the image fully responsive */
   .carousel-inner img {
-    width: 100%;
-    height: 100%;
+ 	max-width: 100%;
+    max-height: 100%;
   }
   </style>
- <a href="/app/home" style="font-size: 22px;"><span class="label">My Application</span></a>
+<a href="<c:url value='/home'/>" style="font-size: 22px;"><span class="label">DeepDiveCode</span></a>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -15,25 +15,19 @@
     <li data-target="#demo" data-slide-to="2"></li>
   </ul>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="" alt="Los Angeles" width="1100" height="100">
+    <div class="carousel-item  active">
+     <%--  <img src="<c:url value='/views/images/img-4.png'/>" alt="Java" width="1100" height="100"> --%>
       <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>We had such a great time in LA!</p>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="" alt="Chicago" width="1100" height="100">
+     <%--  <img src="<c:url value='/views/images/img-2.jpg'/>" alt="NodeJS" width="1100" height="100"> --%>
       <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
       </div>   
     </div>
     <div class="carousel-item">
-      <img src="" alt="New York" width="1100" height="100">
+     <%--  <img src="<c:url value='/views/images/img-1.png'/>" alt="Spring" width="1100" height="100"> --%>
       <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
       </div>   
     </div>
   </div>

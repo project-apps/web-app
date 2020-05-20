@@ -28,6 +28,7 @@ import com.app.config.MessageConverter;
 import com.app.entity.dto.AppProperties;
 import com.app.entity.dto.JSONResponse;
 import com.app.entity.dto.UserDto;
+import com.app.util.WebAppConstants;
 
 @RestController
 @RequestMapping("/user")
@@ -46,7 +47,7 @@ public class UserController extends AbstractGenericController {
 	public JSONResponse addUser(@RequestBody AuthUser user, HttpServletResponse response, HttpSession session) throws URISyntaxException {
 		JSONResponse jsonResponse = new JSONResponse();
 		try {
-			String targetUrl =  new StringBuffer(getPropValue(API_GATEWAY_HOST)).append("/userservice/user").toString();
+			String targetUrl =  new StringBuffer(getPropValue(WebAppConstants.API_GATEWAY_HOST)).append("/userservice/user").toString();
 			ResponseEntity<AuthUser> responseEntity = restTemplate.postForEntity(targetUrl, user, AuthUser.class);
 			logger.debug("Ressponse from user-authentication:\n \t ResponseEntity:\n\t\t StatsCode: "
 					+ responseEntity.getStatusCodeValue());

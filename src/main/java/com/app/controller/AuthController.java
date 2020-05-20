@@ -24,6 +24,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.app.entity.dto.AppProperties;
 import com.app.entity.dto.JSONResponse;
 import com.app.entity.dto.UserDto;
+import com.app.util.WebAppConstants;
 
 @RestController
 @RequestMapping("/auth")
@@ -40,7 +41,7 @@ public class AuthController extends AbstractGenericController {
 				url.append(":").append(serverPort);
 			}
 			url.append(request.getContextPath()).append("/auth/login/callback");
-			targetUri= UriComponentsBuilder.fromUriString(getPropValue(API_GATEWAY_HOST))
+			targetUri= UriComponentsBuilder.fromUriString(getPropValue(WebAppConstants.API_GATEWAY_HOST))
 					.path("/authservice/oauth2/authorization/").path(provider)
 					.queryParam("callback", url).build().toUri().toString();
 			logger.debug("URL for authentication: "+targetUri);
@@ -69,7 +70,7 @@ public class AuthController extends AbstractGenericController {
 			HttpSession session) {
 		JSONResponse jsonResponse = new JSONResponse();
 		try {
-			StringBuffer targetUrl = new StringBuffer(getPropValue(API_GATEWAY_HOST)).append("/authservice/user/authenticate");
+			StringBuffer targetUrl = new StringBuffer(getPropValue(WebAppConstants.API_GATEWAY_HOST)).append("/authservice/user/authenticate");
 			logger.debug("Calling auth service: "+targetUrl +" with username:"+user.getUsername());
 			ResponseEntity<AuthUser> responseEntity = restTemplate.postForEntity(targetUrl.toString(), user, AuthUser.class);
 			logger.debug("Ressponse from user-authentication:\n \t ResponseEntity:\n\t\t StatsCode: "

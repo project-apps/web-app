@@ -18,11 +18,11 @@
 </head>
 <body>
 	<div class="jumbotron jumbotron-fluid mb-0">
-		<div class="container">
+    	<div class="container">
     		<tiles:insertAttribute name="header" />
     	</div>
 	</div>
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3 sticky-top">
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
 		<div class="container-fluid">
 			<tiles:insertAttribute name="topMenu" />
 		</div>

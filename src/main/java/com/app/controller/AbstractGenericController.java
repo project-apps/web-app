@@ -6,13 +6,16 @@ import java.util.Properties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.client.RestTemplate;
-
+/**
+ * 
+ * @author Rajan Mishra
+ * Implemented class RestTemplateURIExchange
+ */
 @Controller
 public class AbstractGenericController {
 
@@ -28,7 +31,6 @@ public class AbstractGenericController {
 	@Autowired
 	private Environment environment;
 	
-	protected static final String API_GATEWAY_HOST = "url.api.gateway";
 	
 	public String getPropValue(String key) throws IOException {
 		Properties props = new Properties();

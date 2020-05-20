@@ -33,9 +33,7 @@
 				<tiles:insertAttribute name="leftMenu"/>
 			</nav>
 			<div class="container">
-			
 				<div id="content">
-					
 					<tiles:insertAttribute name="body" />
 				</div>
 			</div>

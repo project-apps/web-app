@@ -20,20 +20,19 @@ public class RestTemplateURIExchange extends AbstractGenericController {
 	private HttpHeaders headers;
 	public RestTemplateURIExchange() {
 		HttpMessageConverter stringHttpMessageConverter = new StringHttpMessageConverter(Charset.forName("UTF-8"));
-        httpMessageConverter = new ArrayList<HttpMessageConverter<?>>();
-        httpMessageConverter.add(stringHttpMessageConverter);
+		httpMessageConverter = new ArrayList<HttpMessageConverter<?>>();
+		httpMessageConverter.add(stringHttpMessageConverter);
 		headers = new HttpHeaders();
-        MediaType mediaType = new MediaType(MediaType.TEXT_HTML, StandardCharsets.UTF_8);
-        headers.setContentType(mediaType);
+		MediaType mediaType = new MediaType(MediaType.TEXT_HTML, StandardCharsets.UTF_8);
+		headers.setContentType(mediaType);
 
 	}
-	public String exchange(URI targetUri) throws RestClientException, MalformedURLException {
+	public ResponseEntity<String> exchange(URI targetUri) throws RestClientException, MalformedURLException {
 		//restTemplate.setMessageConverters(httpMessageConverter);
-        logger.info("Invoking restTemplate with targetUrl: "+targetUri);
+		logger.info("Invoking restTemplate with targetUrl: "+targetUri);
 		HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-        ResponseEntity<String> responseEntity = restTemplate.exchange(targetUri.toURL().toString(), HttpMethod.GET, entity, String.class);
-        String result = responseEntity.getBody();
-        return result;
+		ResponseEntity<String> responseEntity = restTemplate.exchange(targetUri.toURL().toString(), HttpMethod.GET, entity, String.class);
+		return responseEntity;
 	}
 
 }
