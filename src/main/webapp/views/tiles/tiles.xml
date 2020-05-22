@@ -3,66 +3,51 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
        "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
 <tiles-definitions>
- <!-- <definition name="home.definition" template="/views/tiles/layout/home-layout.jsp">  
-        <put-attribute name="title" value="" />  
-        <put-attribute name="header" value="/views/tiles/jsp/header.jsp" />
-        <put-attribute name="topMenu" value="/views/tiles/jsp/topMenu.jsp" />
-        <put-attribute name="body" value="" />  
-        <put-attribute name="footer" value="/views/tiles/jsp/footer.jsp" />
-    </definition> -->
+    <definition name="base.definition" template="/views/tiles/layout/baseLayout.jsp"> 
+	    <put-attribute name="title" value="" />  
+	    <put-attribute name="navbar" value="/views/jsp/navbar.jsp" />
+	    <put-attribute name="body" value="" />  
+    	<put-attribute name="footer" value="/views/jsp/footer.jsp" /> 
+    </definition>
     <definition name="error.definition" template="/views/tiles/layout/errorLayout.jsp">  
         <put-attribute name="title" value="Error" />  
-        <put-attribute name="navbar" value="/views/tiles/jsp/navbar.jsp" />
+        <put-attribute name="navbar" value="/views/jsp/navbar.jsp" />
         <put-attribute name="body" value="" /> 
-        <put-attribute name="footer" value="/views/tiles/jsp/footer.jsp" />
-    </definition>
-    
-     <definition name="home.definition" template="/views/tiles/layout/homeLayout.jsp">  
-        <put-attribute name="title" value="" />  
-        <put-attribute name="navbar" value="/views/tiles/jsp/navbar.jsp" />
-        <put-attribute name="body" value="" />  
-        <put-attribute name="footer" value="/views/tiles/jsp/footer.jsp" />
-    </definition>
-    <definition name="course.definition" template="/views/tiles/layout/courseLayout.jsp">  
-        <put-attribute name="title" value="" />  
-        <put-attribute name="navbar" value="/views/tiles/jsp/navbar.jsp" />
-        <put-attribute name="sidebar" value="/views/tiles/jsp/sidebar.jsp" />
-        <put-attribute name="body" value="" /> 
-        <put-attribute name="footer" value="/views/tiles/jsp/footer.jsp" />
+        <put-attribute name="footer" value="/views/jsp/footer.jsp" />
     </definition>
     <definition name="empty.definition" template="/views/tiles/layout/empty-layout.jsp">
-        <put-attribute name="body" value="" />  
+        <put-attribute name="body" value=""/>  
     </definition>
-<!--     <definition name="home" extends="home.definition">  
-        <put-attribute name="title" value="Home Manager" />  
-        <put-attribute name="body" value="/views/tiles/jsp/home.jsp" />  
-    </definition> -->
-        <definition name="home" extends="home.definition">  
-        <put-attribute name="title" value="Home Manager" />  
-        <put-attribute name="body" value="/views/tiles/jsp/home.jsp" />  
+    
+    <definition name="home" extends="base.definition"> 
+    	<put-attribute name="title" value="Home"/>  
+        <put-attribute name="body" value="/views/jsp/home.jsp"/>  
     </definition>
+    <definition name="contactus" extends="base.definition"> 
+    	<put-attribute name="title" value="Contact-Us"/>  
+        <put-attribute name="body" value="/views/jsp/contactus.jsp"/>  
+    </definition>    
     <definition name="course.page" extends="course.definition">  
-        <put-attribute name="title" value="Course" />  
-        <put-attribute name="body" value="/views/tiles/jsp/course/home.jsp" />
+        <put-attribute name="title" value="Course"/>
+        <put-attribute name="body" value="/views/jsp/course/home.jsp"/>
     </definition>
     <definition name="loginReg" extends="empty.definition">  
-        <put-attribute name="body" value="/views/tiles/jsp/loginRegModal.jsp" />  
+        <put-attribute name="body" value="/views/jsp/loginRegModal.jsp"/>  
     </definition>
     <definition name="closeSSOLoginWindow" extends="empty.definition">  
-        <put-attribute name="body" value="/views/tiles/jsp/closeSSOLoginWindow.jsp" />  
+        <put-attribute name="body" value="/views/jsp/closeSSOLoginWindow.jsp"/>  
     </definition>  
-    <definition name="course.content" extends="empty.definition">  
-        <put-attribute name="body" value="/views/tiles/jsp/course/home.jsp" />  
+    <definition name="course.content" extends="empty.definition">
+        <put-attribute name="body" value="/views/jsp/course/home.jsp"/>  
     </definition>
-    <definition name="service.pincode" extends="home.definition">  
-     	<put-attribute name="title" value="Pincode Service"/> 
-        <put-attribute name="body" value="/views/tiles/jsp/service/pincode.jsp" />  
+    <definition name="service.pincode" extends="base.definition">  
+     	<put-attribute name="title" value="Pincode-Service"/> 
+        <put-attribute name="body" value="/views/jsp/service/pincode.jsp"/>  
     </definition>
-    <definition name="error" extends="home.definition">  
-    	<put-attribute name="title" value="Error" />
-        <put-attribute name="body" value="/views/tiles/jsp/error.jsp" />  
+    <definition name="error" extends="base.definition">  
+        <put-attribute name="body" value="/views/jsp/error.jsp" />  
     </definition>
-     <definition name="error.course" extends="empty.definition">  
-        <put-attribute name="body" value="/views/tiles/jsp/error.jsp" />  
+     <definition name="error.course" extends="empty.definition">
+        <put-attribute name="body" value="/views/jsp/error.jsp" />  
     </definition>
 </tiles-definitions>  

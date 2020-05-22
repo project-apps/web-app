@@ -4,8 +4,8 @@ server:
       context-path: /
 logging:
    level:
-      root: INFO
+      root: TRACE
       com.app: TRACE
-      org.springframework.web: INFO
-      org.springframework.security: INFO
+      org.springframework.web: TRACE
+      org.springframework.security: TRACE
  
